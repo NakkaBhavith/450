@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-image: url('static/download.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+ 
+ 
+ <div class="login">
+	
+    <!-- Get input for predict the  heart disease -->
+    <center>
+         <br>
+            <br>
+    <form action="{{ url_for('predict')}}"method="post">
+       
+          <br>
+            <br>
+        <h1>SOIL NUTRIENTS BASED CROP RECOMMENDATION SYSTEM</h1>
+        
+    	<input type="text" name="NITROGEN" placeholder="NITROGEN" required="required" />
+        <input type="text" name="PHOSPORUS" placeholder="PHOSPORUS" required="required" />
+        <br>
+        <br>
+		<input type="text" name="POTASSIUM" placeholder="POTASSIUM" required="required" />
+        <input type="text" name="TEMPERATURE" placeholder="TEMPERATURE" required="required" />
+        <br>
+        <br>
+            <input type="text" name="HUMIDITY" placeholder="HUMIDITY" required="required" />
+    	<input type="text" name="PH" placeholder="PH" required="required" />
+        <input type="text" name="RAINFALL" placeholder="RAINFALL" required="required" />
+    		<br>
+        <br>
+        <br>
+    <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict</strong></button></a>
+    	<br>
+			<br> 
+      <br>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
